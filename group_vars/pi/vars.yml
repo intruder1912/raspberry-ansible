@@ -1,5 +1,5 @@
 ---
-ansible_user: "pi"
+ansible_user: "ansiblepi"
 ansible_ssh_private_key_file: "keys/id_rsa"
 dbs_ssh_pubkey: "{{ lookup('file', 'keys/id_rsa.pub') }}"
 
@@ -8,10 +8,12 @@ dbs_set_locale: true
 dbs_set_timezone: true
 dbs_set_ntp: true
 dbs_hostname: "{{ inventory_hostname }}"
-dbs_default_locale: "en_US.UTF-8"
+dbs_default_locale: "de_AT.UTF-8"
 dbs_locales:
   - "en_US.UTF-8"
-dbs_timezone: "Europe/Helsinki"
+  - "de_AT.UTF-8"
+  - "de_DE.UTF-8"
+dbs_timezone: "Europe/Vienna"
 
 dbs_ntp_hosts:
   - "0.fi.pool.ntp.org"
